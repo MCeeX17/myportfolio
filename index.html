@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mopeli Mopeli Teboho | Full-Stack Developer</title>
+  <meta name="description" content="Full-stack developer building web portals, mobile apps and business systems with React, Flutter, Firebase and C# MVC.">
+  <meta name="theme-color" content="#070a13">
+  <meta property="og:title" content="Mopeli Mopeli Teboho | Full-Stack Developer">
+  <meta property="og:image" content="me.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="app.js"></script>
+</head>
+<body>
+  <div class="bg" aria-hidden="true"></div>
+
+  <header class="nav">
+    <div class="wrap nav-in">
+      <div class="brand">
+        <!-- Click the M 5 times to open admin login -->
+        <div class="mark" id="secret-mark" aria-hidden="true">M<span id="tap-badge" class="tap-badge hidden">0</span></div>
+        <div><b>Mopeli Teboho</b><small>Full-Stack Developer</small></div>
+      </div>
+      <nav class="links">
+        <a href="#about">What I do</a>
+        <a href="#work">Work</a>
+        <a href="#contact">Contact</a>
+        <button type="button" id="admin-pill" class="pill hidden">Admin</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-text">
+        <span class="tag"><i class="fa-solid fa-code"></i> Web portals, mobile apps &amp; business systems</span>
+        <h1>Hi, I'm <span class="grad">Mopeli Mopeli Teboho</span></h1>
+        <p class="role">I'm a <span id="typed" class="typed"></span><span class="caret"></span></p>
+        <p class="lead">I build fast, good-looking apps for real businesses: school management, procurement gateways, booking engines and field-work systems. Everything from the database to the screen.</p>
+        <div class="actions">
+          <a href="#work" class="btn btn-primary">See my work <i class="fa-solid fa-arrow-down"></i></a>
+          <a href="cv.pdf" target="_blank" rel="noopener" class="btn btn-ghost"><i class="fa-solid fa-file-lines"></i> View CV</a>
+          <a href="#contact" class="btn btn-ghost">Get in touch</a>
+        </div>
+        <div class="stats">
+          <div><b id="stat-projects">0</b><span>Websites built</span></div>
+          <div><b>4</b><span>Core stacks</span></div>
+          <div><b>Web + Mobile</b><span>Full-stack</span></div>
+        </div>
+      </div>
+
+      <div class="photo-col">
+        <div class="photo" id="photo">
+          <div class="ring"></div>
+          <img src="me.jpg" alt="Mopeli Mopeli Teboho" width="600" height="750" fetchpriority="high">
+          <span class="chip c1"><i class="fa-brands fa-react"></i> React</span>
+          <span class="chip c2"><i class="fa-solid fa-mobile-screen"></i> Flutter</span>
+          <span class="chip c3"><i class="fa-solid fa-fire"></i> Firebase</span>
+          <span class="chip c4"><i class="fa-solid fa-hashtag"></i> C# MVC</span>
+          <span class="status"><i></i> Available for projects</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHAT I DO -->
+    <section id="about" class="section reveal">
+      <p class="eyebrow">// what I do</p>
+      <h2>I turn ideas into working software</h2>
+      <div class="cols">
+        <article class="card"><i class="fa-solid fa-laptop-code ic"></i><h3>Full-stack web apps</h3><p>React front ends with C# ASP.NET MVC or Firebase behind them. Responsive, secure and built to scale.</p></article>
+        <article class="card"><i class="fa-solid fa-mobile-screen-button ic"></i><h3>Mobile apps with Flutter</h3><p>One codebase for Android and iOS with smooth UI, state management and realtime data.</p></article>
+        <article class="card"><i class="fa-solid fa-cloud ic"></i><h3>Cloud &amp; Firebase</h3><p>Auth, Firestore, storage and security rules, set up properly so client portals and dashboards stay reliable.</p></article>
+      </div>
+    </section>
+
+    <!-- WORK -->
+    <section id="work" class="section reveal">
+      <p class="eyebrow">// portfolio</p>
+      <div class="head"><h2>Websites &amp; systems I've built</h2><span id="project-count" class="muted"></span></div>
+      <div id="projects-grid" class="grid"></div>
+      <p id="empty-state" class="empty hidden">Projects coming soon.</p>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section reveal">
+      <p class="eyebrow">// let's talk</p>
+      <h2>Have a project in mind?</h2>
+      <p class="muted sub">Reach out directly. I'm happy to talk about your idea.</p>
+      <div id="contact-grid" class="grid contact-grid"></div>
+    </section>
+
+    <footer class="footer">&copy; <span id="year"></span> Mopeli Mopeli Teboho &middot; Built with React-minded love, Firebase &amp; coffee</footer>
+  </main>
+
+  <!-- ADMIN PANEL -->
+  <section id="admin-panel" class="admin hidden collapsed" aria-label="Admin panel">
+    <button type="button" id="admin-toggle" class="admin-head"><span>Admin</span><i class="chev"></i></button>
+    <div class="admin-body">
+      <div class="tabs">
+        <button type="button" class="tab on" data-tab="site">Add website</button>
+        <button type="button" class="tab" data-tab="contact">Contact info</button>
+      </div>
+
+      <form id="project-form" class="stack tabpane" data-pane="site">
+        <label class="field"><span>Website name</span><input id="project-title" required maxlength="80" autocomplete="off"></label>
+        <label class="field"><span>Website link (icon is fetched automatically)</span><input type="url" id="project-url" placeholder="https://" required autocomplete="off"></label>
+        <label class="field"><span>Tech used</span><input id="project-tech" placeholder="React, Firebase" required maxlength="80" autocomplete="off"></label>
+        <label class="field"><span>Icon link (optional override)</span><input type="url" id="project-icon" placeholder="https://.../icon.png" autocomplete="off"></label>
+        <label class="field"><span>Short description</span><textarea id="project-desc" rows="3" required maxlength="300"></textarea></label>
+        <button type="submit" class="btn btn-primary btn-block">Publish website</button>
+      </form>
+
+      <form id="contact-form" class="stack tabpane hidden" data-pane="contact">
+        <label class="field"><span>Email</span><input type="email" id="c-email" autocomplete="off"></label>
+        <label class="field"><span>Phone (with country code)</span><input type="tel" id="c-phone" placeholder="+27..." autocomplete="off"></label>
+        <label class="field"><span>GitHub link</span><input id="c-github" placeholder="https://github.com/..." autocomplete="off"></label>
+        <label class="field"><span>Instagram link</span><input id="c-instagram" placeholder="https://instagram.com/..." autocomplete="off"></label>
+        <label class="field"><span>Facebook link</span><input id="c-facebook" placeholder="https://facebook.com/..." autocomplete="off"></label>
+        <button type="submit" class="btn btn-primary btn-block">Save contact info</button>
+      </form>
+
+      <button type="button" id="logout-btn" class="link-danger">Log out</button>
+    </div>
+  </section>
+
+  <!-- LOGIN -->
+  <dialog id="login-modal" class="login">
+    <div class="login-card">
+      <h3>Admin sign in</h3>
+      <p class="muted">Only the site owner can edit this portfolio.</p>
+      <form id="login-form" class="stack">
+        <label class="field"><span>Email</span><input type="email" id="admin-email" required autocomplete="username"></label>
+        <label class="field"><span>Password</span><input type="password" id="admin-password" required autocomplete="current-password"></label>
+        <p id="login-error" class="error hidden" role="alert"></p>
+        <div class="row">
+          <button type="button" id="close-login" class="btn btn-ghost">Cancel</button>
+          <button type="submit" class="btn btn-primary">Sign in</button>
+        </div>
+      </form>
+    </div>
+  </dialog>
+</body>
+</html>
